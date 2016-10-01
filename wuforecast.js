@@ -62,9 +62,9 @@ Module.register("wuforecast",{
 		return ["moment.js"];
 	},
 
-	// Define required scripts.
+	// Define required styles
 	getStyles: function() {
-		return ["wuforecast.css"];
+		return ["wuforecast.css", 'weather-icons.css'];
 	},
 
 	// Define required translations.
@@ -141,7 +141,7 @@ Module.register("wuforecast",{
 			row.appendChild(iconCell);
 
 			var icon = document.createElement("span");
-			icon.className = forecast.icon;
+			icon.className = "wi weathericon " + forecast.icon;
 			iconCell.appendChild(icon);
 
 			// Set the degree symbol if desired
