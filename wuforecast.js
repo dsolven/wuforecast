@@ -239,7 +239,7 @@ Module.register("wuforecast",{
 
 		this.forecast = [];
 		for (var i = 0, count = Math.min(data.forecast.simpleforecast.forecastday.length, this.config.maxNumberOfDays); i < count; i++) {
-			
+
 			var forecast = data.forecast.simpleforecast.forecastday[i];
 			this.forecast.push({
 
