@@ -33,26 +33,26 @@ Module.register("wuforecast",{
 		apiBase: "http://api.wunderground.com/api/",
 		forecastEndpoint: "/forecast10day/q/",
 
-                iconTable: {
-                        "chanceflurries": "wi-day-snow-wind",
-                        "chancerain": "wi-day-showers",
-                        "chancesleet": "wi-day-sleet",
-                        "chancesnow": "wi-day-snow",
-                        "chancetstorms": "wi-day-storm-showers",
-                        "clear": "wi-day-sunny",
-                        "cloudy": "wi-cloud",
-                        "flurries": "wi-snow-wind",
-                        "fog": "wi-fog",
-                        "haze": "wi-day-haze",
-                        "mostlycloudy": "wi-cloudy",
-                        "mostlysunny": "wi-day-sunny-overcast",
-                        "partlycloudy": "wi-day-cloudy",
-                        "partlysunny": "wi-day-cloudy-high",
+		iconTable: {
+			"chanceflurries": "wi-day-snow-wind",
+			"chancerain": "wi-day-showers",
+			"chancesleet": "wi-day-sleet",
+			"chancesnow": "wi-day-snow",
+			"chancetstorms": "wi-day-storm-showers",
+			"clear": "wi-day-sunny",
+			"cloudy": "wi-cloud",
+			"flurries": "wi-snow-wind",
+			"fog": "wi-fog",
+			"haze": "wi-day-haze",
+			"mostlycloudy": "wi-cloudy",
+			"mostlysunny": "wi-day-sunny-overcast",
+			"partlycloudy": "wi-day-cloudy",
+			"partlysunny": "wi-day-cloudy-high",
 			"rain": "wi-rain",
-                        "sleet": "wi-sleet",
-                        "snow": "wi-snow",
-                        "tstorms": "wi-thunderstorm"
-                },
+			"sleet": "wi-sleet",
+			"snow": "wi-snow",
+			"tstorms": "wi-thunderstorm"
+		},
 
 
 	},
@@ -129,12 +129,12 @@ Module.register("wuforecast",{
 			dayCell.innerHTML = forecast.day;
 			row.appendChild(dayCell);
 
-                        var popCell = document.createElement("td");
+			var popCell = document.createElement("td");
 			popCell.className = "align-right pop";
-                        if (forecast.pop > 0 && this.config.pop) {
-                                popCell.innerHTML = "  <sup>" + forecast.pop + "%</sup>";
-                        }
-                        row.appendChild(popCell);
+			if (forecast.pop > 0 && this.config.pop) {
+					popCell.innerHTML = "  <sup>" + forecast.pop + "%</sup>";
+			}
+			row.appendChild(popCell);
 
 			var iconCell = document.createElement("td");
 			iconCell.className = "align-center bright weather-icon";
@@ -161,13 +161,13 @@ Module.register("wuforecast",{
 			row.appendChild(maxTempCell);
 
 			var minTempCell = document.createElement("td");
-                        if (this.config.units === "imperial") {
-                                minTempCell.innerHTML = forecast.minTemp + degSymbol;
-                        } else if (this.config.units === "metric") {
-                                minTempCell.innerHTML = forecast.minTempC  + degSymbol;
-                        } else {
-                                minTempCell.innerHTML = forecast.minTempC + 273 + degSymbol;
-                        }
+			if (this.config.units === "imperial") {
+					minTempCell.innerHTML = forecast.minTemp + degSymbol;
+			} else if (this.config.units === "metric") {
+					minTempCell.innerHTML = forecast.minTempC  + degSymbol;
+			} else {
+					minTempCell.innerHTML = forecast.minTempC + 273 + degSymbol;
+			}
 			minTempCell.className = "align-right min-temp";
 			row.appendChild(minTempCell);
 
@@ -245,7 +245,7 @@ Module.register("wuforecast",{
 
 				day: moment(forecast.date.epoch, "X").format("ddd"),
 //				icon: forecast.icon_url,
-                                icon: this.config.iconTable[forecast.icon],
+				icon: this.config.iconTable[forecast.icon],
 				pop: forecast.pop,
 				maxTemp: this.roundValue(forecast.high.fahrenheit),
 				minTemp: this.roundValue(forecast.low.fahrenheit),
